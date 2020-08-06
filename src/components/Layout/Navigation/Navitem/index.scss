@@ -1,0 +1,19 @@
+.nav-link {
+  background: transparent;
+  color: #a9b7d0;
+  align-items: center;
+  display: flex;
+  padding-left: 0px;
+
+  .nav-item-title {
+    position: relative;
+    text-align: left;
+    font-size: 14px;
+  }
+}
+
+.nav-li-item {
+  :hover {
+    color: #1dc4e9;
+  }
+}
