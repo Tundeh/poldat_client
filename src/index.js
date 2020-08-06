@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {browserRouter as Router} from react-router-dom;
 import {Provider as ReduxProvider} from "react-redux";
 
-import './index.css';
+import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import configureStore from "../src/redux/configureStore";
