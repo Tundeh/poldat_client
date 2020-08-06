@@ -1,0 +1,30 @@
+.Nav-bar {
+  display: block;
+  position: fixed;
+  width: 264px;
+  height: 100vh;
+  flex-direction: column;
+  left: 0px;
+  top: 0px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 1px 0 20px 0 rgb(63, 77, 103);
+  background: #3f4d67;
+}
+
+a {
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 991px) {
+  .Nav-bar {
+    z-index: 102;
+    box-shadow: none;
+    &.hide {
+      width: 264px;
+      transform: translateX(-100%);
+    }
+    &.active {
+      transform: translateX(0%);
+    }
+  }
+}
