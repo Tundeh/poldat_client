@@ -1,18 +1,31 @@
 import React from "react";
 import Layout from "./components/Layout/index";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import {} from "@fortawesome/free-brands-svg-icons";
+import {
+  faUser,
+  faDatabase,
+  faPlusSquare,
+  faHome,
+  faUsers,
+  faAddressBook,
+  faUserPlus,
+  faShare,
+} from "@fortawesome/free-solid-svg-icons";
 
 import "./App.scss";
 
-library.add();
-
+library.add(
+  faUser,
+  faDatabase,
+  faPlusSquare,
+  faHome,
+  faUsers,
+  faAddressBook,
+  faUserPlus,
+  faShare
+);
 function App() {
-  return (
-    <div>
-      <Layout></Layout>
-    </div>
-  );
+  return <Layout></Layout>;
 }
 
 export default App;

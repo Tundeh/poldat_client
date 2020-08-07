@@ -1,7 +1,7 @@
 import React from "react";
 import windowSize from "react-window-size";
-import {connect} from "react-redux";
-import {bindActionCreators} from "redux";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import propTypes from "prop-types";
 
@@ -14,7 +14,7 @@ import "react-perfect-scrollbar/dist/css/styles.css";
 
 const NavContent = (props) => {
   let items;
-  
+
   items = navigation.items.map((item) => {
     switch (item.type) {
       case "group":
@@ -30,9 +30,7 @@ const NavContent = (props) => {
   return (
     <div className="navbar-items-wrapper">
       <PerfectScrollbar backgroundColor="transparent" component="div">
-        
-      <ul className="navbar-items">{items}</ul>
-      
+        <ul className="navbar-items">{items}</ul>
       </PerfectScrollbar>
     </div>
   );
@@ -40,20 +38,22 @@ const NavContent = (props) => {
 
 NavContent.propTypes = {
   collapse_menu: propTypes.bool.isRequired,
-  onToggleNavigation: propTypes.func.isRequired
-}
+  onToggleNavigation: propTypes.func.isRequired,
+};
 
 function mapStateToProps(state) {
   return {
-    collapse_menu: state.collapse_menu
-  }
-} 
+    collapse_menu: state.collapse_menu,
+  };
+}
 
 function mapDispatchToProps(dispatch) {
   return {
-    onToggleNavigation: bindActionCreators(actions.collapseMenu, dispatch)
-
-  }
+    onToggleNavigation: bindActionCreators(actions.collapseMenu, dispatch),
+  };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(windowSize(NavContent));
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(windowSize(NavContent));
