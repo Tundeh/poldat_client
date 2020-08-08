@@ -9,7 +9,7 @@ import {
   faUsers,
   faAddressBook,
   faUserPlus,
-  faShare,
+  faShareAlt
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./App.scss";
@@ -22,7 +22,7 @@ library.add(
   faUsers,
   faAddressBook,
   faUserPlus,
-  faShare
+  faShareAlt
 );
 function App() {
   return <Layout></Layout>;

@@ -5,6 +5,23 @@
   display: flex;
   padding-left: 0px;
 
+  &:hover,
+  &:focus {
+    color: #1dc4e9;
+    background: transparent;
+    text-decoration: none;
+  }
+
+  &.active,
+  :active {
+    background: #333f54;
+    color: #fff;
+    :hover {
+      background: #333f54;
+      color: #fff;
+    }
+  }
+
   .nav-item-title {
     position: relative;
     text-align: left;
@@ -13,7 +30,7 @@
 }
 
 .nav-li-item {
-  :hover {
-    color: #1dc4e9;
-  }
+  width: 100%;
+  list-style: none;
+  margin-bottom: 7px;
 }
