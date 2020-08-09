@@ -1,0 +1,16 @@
+.route-wrapper {
+  display: flex;
+  margin-left: 285px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0px;
+  justify-content: center;
+
+  @media only screen and (max-width: 991px) {
+    margin-left: 20px;
+    margin-top: 90px;
+    margin-right: 20px;
+    clear: both;
+  }
+}

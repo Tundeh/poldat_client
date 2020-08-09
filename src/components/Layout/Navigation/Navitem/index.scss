@@ -1,0 +1,37 @@
+.nav-link {
+  background: transparent;
+  color: #a9b7d0;
+  align-items: center;
+  display: flex;
+  padding-left: 0px;
+
+  &:hover,
+  &:focus {
+    color: #1dc4e9;
+    background: transparent;
+    text-decoration: none;
+  }
+
+  &.active,
+  :active {
+    background: #333f54;
+    color: #fff;
+    outline: none;
+    :hover {
+      background: #333f54;
+      color: #fff;
+    }
+  }
+
+  .nav-item-title {
+    position: relative;
+    text-align: left;
+    font-size: 14px;
+  }
+}
+
+.nav-li-item {
+  width: 100%;
+  list-style: none;
+  margin-bottom: 7px;
+}

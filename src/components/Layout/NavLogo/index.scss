@@ -1,0 +1,113 @@
+.nav-logo {
+  position: relative;
+  align-items: center;
+  display: inline-flex;
+  float: left;
+  background: #3f4d67;
+  height: 70px;
+  text-align: center;
+  width: 264px;
+  margin-right: 0;
+  transition: all 0.3s ease-in-out;
+  :hover {
+    text-decoration: none;
+  }
+}
+.b-brand {
+  display: flex;
+  margin-left: 5px;
+  align-items: center;
+}
+
+.b-bgr {
+  border-radius: 10px;
+  width: 35px;
+  height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: skyblue;
+}
+
+.b-bgr i {
+  color: #fff;
+}
+
+.b-title {
+  margin-left: 10px;
+  font-weight: 300;
+  color: #fff;
+  font-size: 2.2rem;
+}
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 70px;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  padding: 0 10px;
+  transition: all 0.3s ease-in-out;
+
+  span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2.8px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    backface-visibility: hidden;
+    border-radius: 2px;
+
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 2.8px;
+      background-color: white;
+      transition: all 0.3s;
+      backface-visibility: hidden;
+      border-radius: 2px;
+    }
+
+    &:after {
+      top: 5px;
+      width: 70%;
+    }
+
+    &:before {
+      top: -5px;
+      width: 40%;
+    }
+  }
+
+  &.on {
+    span {
+      background-color: transparent;
+
+      &:after,
+      &:before {
+        height: 2px;
+        width: 100%;
+      }
+
+      &:before {
+        transform: rotate(45deg) translate(4px, 4px);
+      }
+
+      &:after {
+        transform: rotate(-45deg) translate(3px, -3px);
+      }
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .nav-logo {
+    width: 100%;
+    z-index: 100;
+  }
+}
