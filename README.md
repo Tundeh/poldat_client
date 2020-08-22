@@ -2,6 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/80fbd568e46940fbb436f7f02f60640f)](https://app.codacy.com/manual/Tundeh/Poldat_Client?utm_source=github.com&utm_medium=referral&utm_content=Tundeh/Poldat_Client&utm_campaign=Badge_Grade_Dashboard)
+
 In the project directory, you can run:
 
 ### `yarn start`
