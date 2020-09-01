@@ -12,6 +12,7 @@ import NavLogo from "./NavLogo/index";
 import OutsideClick from "./Navigation/OutsideClick/index";
 import Aux from "../Auxs/index";
 
+
 const Layout = (props) => {
   let layoutContent;
 
@@ -41,6 +42,7 @@ const Layout = (props) => {
          <NavLogo />
         <div className={mobileClass}>
           <Navigation />
+          
         </div>
         {
             props.collapse_menu?
@@ -56,6 +58,7 @@ const Layout = (props) => {
       <div className="Nav-bar">
         <NavLogo />
         <Navigation />
+
       </div>
     
   }
