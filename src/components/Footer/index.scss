@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  height: 5rem;
+  background: #f2f2f2;
+  text-align: center;
+  z-index: 2444;
+  margin-bottom: 0px;
+  > span {
+    color: #000000;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .footer {
+    margin-left: 264px;
+    margin-right: 0px;
+  }
+}
+/*
+.footer__icons {
+  display: flex;
+  justify-content: center;
+}
+
+.footer_icon {
+  margin: 15rem 5rem;
+}
+
+.footer__link {
+  text-decoration: none;
+  box-shadow: none;
+}
+*/
