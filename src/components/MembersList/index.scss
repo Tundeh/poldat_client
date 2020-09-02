@@ -1,0 +1,14 @@
+.table_wrapper {
+  //display: flex;
+  width: 100%;
+  .pagination_wrapper {
+    clear: both;
+    width: 100%;
+  }
+  .table_row {
+    &:hover {
+      background-color: rgb(114, 141, 161);
+      color: #ffffff;
+    }
+  }
+}
