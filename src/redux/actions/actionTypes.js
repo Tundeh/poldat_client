@@ -1,1 +1,3 @@
 export const COLLAPSE_MENU = "COLLAPSE_MENU";
+export const LOAD_MEMBERS = "LOAD_MEMBERS";
+export const API_CALL_ERROR = "API_CALL_ERROR";
