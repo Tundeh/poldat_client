@@ -2,17 +2,10 @@ import { handleResponse, handleError } from "./apiUtils";
 const axios = require("axios");
 const keys = require("../config/keys");
 const baseUrl = keys.apiURL + "member/";
+
 // get list of members
 export const getMembers = (props) => {
-  /*return axios
-    .get(baseUrl)
-    .then((response) => {
-      handleResponse(response);
-      console.log(response);
-    })
-    .catch((error) => {
-      handleError(error);
-    });*/
+  
   return fetch(baseUrl).then(handleResponse).catch(handleError);
 };
 
