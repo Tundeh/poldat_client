@@ -5,6 +5,9 @@ import {apiCallError}  from "./apiStatusActions";
 export function loadMemberSuccess(members) {
   return {type: actionTypes.LOAD_MEMBERS, members}
 }
+export function saveMemberSuccess(member) {
+  return{type: actionTypes.SAVE_MEMBER_SUCCESS, member}
+}
 
 export function loadMembers() {
   return function(dispatch){
@@ -14,4 +17,13 @@ export function loadMembers() {
     console.log(error);
   })
 }
+}
+
+
+export function SaveMember(member) {
+  return function(dispatch) {
+    return membersApi.saveMember(member).then(savedMember => {
+      dispatch(saveMemberSuccess(savedMember))
+    })
+  }
 }
