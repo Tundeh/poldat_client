@@ -49,6 +49,6 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
 //SignUp Action Types
-export const SIGNUP_REQUEST = "SIGNUP_REQUEST";
-export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
-export const SIGNUP_FAILURE = "SIGNUP_FAILURE";
+export const LOGOUT_REQUEST = "SIGNUP_REQUEST";
+export const LOGOUT_SUCCESS = "SIGNUP_SUCCESS";
+export const LOGOUT_FAILURE = "SIGNUP_FAILURE";
