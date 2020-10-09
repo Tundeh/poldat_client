@@ -4,7 +4,9 @@ import initialState from "./initialState";
 export default function memberReducer(state = initialState.members, action){
   switch (action.type) {
     case actionTypes.LOAD_MEMBERS:
-      return action.members;
+      return [...state, ...action.members];
+    case actionTypes.SAVE_MEMBER_SUCCESS:
+      return [...state, {...action.member}];
     default: 
       return state;
   }
