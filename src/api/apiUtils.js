@@ -4,10 +4,9 @@ export const handleResponse = async (response) => {
     const error = await response.text();
     throw new Error(error);
   }
-  throw new Error("Network response not ok");
+  return new Error("Network response not ok");
 };
 
 export const handleError = (error) => {
-  console.log(error);
-  throw error;
+ return error;
 };
