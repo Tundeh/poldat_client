@@ -1,5 +1,5 @@
 import { handleResponse, handleError } from "./apiUtils";
-const axios = require("axios");
+
 const keys = require("../config/keys");
 const baseUrl = keys.apiURL + "member/";
 
