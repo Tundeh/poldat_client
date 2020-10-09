@@ -2,7 +2,7 @@ import * as types from "../actions/actionTypes";
 import initialState from "./initialState";
 
 export default function navigationReducer(
-  state = initialState,
+  state = initialState.collapse_menu,
   action
 ) {
   switch (action.type) {
