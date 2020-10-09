@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Poldat",
+  "name": "Poldat- an application use to manage political members",
   "icons": [
     {
       "src": "favicon.ico",
