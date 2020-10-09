@@ -1,5 +1,3 @@
-const dotenv = require("dotenv");
-dotenv.config();
 module.exports = {
-  apiURL: process.env.API_URL,
+  apiURL: process.env.REACT_APP_API_URL,
 };
