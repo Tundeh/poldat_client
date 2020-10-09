@@ -1,3 +1,54 @@
 export const COLLAPSE_MENU = "COLLAPSE_MENU";
+
+//Load Members Action Types
+export const LOAD_MEMBERS_REQUEST = "LOAD_MEMBERS_REQUEST"
 export const LOAD_MEMBERS = "LOAD_MEMBERS";
+export const LOAD_MEMBERS_FAILURE = "LOAD_MEMBERS_FAILURE";
+
+//Load Users Action Types
+export const LOAD_USERS_REQUEST = "LOAD_USERS_REQUEST";
+export const LOAD_USERS_SUCCESS = "LOAD_USERS_SUCCESS";
+export const LOAD_USERS_FAILURE = "LOAD_USERS_FAILURE";
+
+//Save Users Action Types
+export const SAVE_USERS_REQUEST = "SAVE_USERS_REQUEST";
+export const SAVE_USERS_SUCCESS = "SAVE_USERS_SUCCESS";
+export const SAVE_USERS_FAILURE = "SAVE_USERS_FAILURE";
+
+//Delet Users Action Types
+export const DELETE_USERS_REQUEST = "DELETE_USERS_REQUEST";
+export const DELETE_USERS_SUCCESS = "DELETE_USERS_SUCCESS";
+export const DELETE_USERS_FAILURE = "DELETE_USERS_FAILURE";
+
+//Save Member Action Types
+export const SAVE_MEMBER = "SAVE_MEMBER";
+export const SAVE_MEMBER_FAILURE = "SAVE_MEMBER_FAILURE";
+export const SAVE_MEMBER_SUCCESS = "SAVE_MEMBER_SUCCESS";
+
+//Load Group Action Types
+export const LOAD_GROUP_REQUEST = "LOAD_GROUP_REQUEST";
+export const LOAD_GROUP_SUCCESS = "LOAD_GROUP_SUCCESS";
+export const LOAD_GROUP_FAILURE = "LOAD_GROUP_FAILURE";
+
+
+//Save Group Action Types
+export const SAVE_GROUP_REQUEST = "SAVE_GROUP_REQUEST";
+export const SAVE_GROUP_SUCCESS = "SAVE_GROUP_SUCCESS";
+export const SAVE_GROUP_FAILURE = "SAVE_GROUP_SUCCESS";
+
+//Delete Member Action Types
+export const DELETE_MEMBER_REQUEST = "DELETE_MEMBER_REQUEST";
+export const DELETE_MEMBER_SUCCESS = "DELETE_MEMBER_SUCCESS";
+export const DELETE_MEMBER_FAILURE = "DELETE_MEMBER_FAILURE";
+
 export const API_CALL_ERROR = "API_CALL_ERROR";
+
+//Login Action Types
+export const LOGIN_REQUEST = "LOGIN_REQUEST";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAILURE = "LOGIN_FAILURE";
+
+//SignUp Action Types
+export const SIGNUP_REQUEST = "SIGNUP_REQUEST";
+export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
+export const SIGNUP_FAILURE = "SIGNUP_FAILURE";
