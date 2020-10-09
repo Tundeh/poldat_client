@@ -1,69 +1,64 @@
-import React from "react";
-import { Table, Pagination } from "react-bootstrap";
+import React, {useEffect} from "react";
 import "./index.scss";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
 import ReactScrollBar from "react-perfect-scrollbar";
+import propTypes from "prop-types";
+import * as memberActions from "../../redux/actions/memberActions";
+import MemberPagination from "./pagination";
+import MembersTable from "./membersTable";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { Col, FormControl, InputGroup } from "react-bootstrap";
 
-const MembersList = (props) => {
+const MembersList = ({actions, members}) => {
+
+  useEffect(() => {
+
+      actions.loadMembers();
+    
+  }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   ,[]
+  )
+
+
   return (
-    <div className="table_wrapper">
-    <div className="pagination_wrapper">
-    <Pagination size="sm" style={{marginRight: "10px"}}>
-  <Pagination.First />
-  <Pagination.Prev />
-  <Pagination.Item>{1}</Pagination.Item>
-  <Pagination.Ellipsis />
-
-  <Pagination.Item>{10}</Pagination.Item>
-  <Pagination.Item>{11}</Pagination.Item>
-  <Pagination.Item active>{12}</Pagination.Item>
-  <Pagination.Item>{13}</Pagination.Item>
-  <Pagination.Item disabled>{14}</Pagination.Item>
-
-  <Pagination.Ellipsis />
-  <Pagination.Item>{20}</Pagination.Item>
-  <Pagination.Next />
-  <Pagination.Last />
-</Pagination>
+    <div className="table-wrapper">
+      <div className="table-header">
+       
+    
+      
+      <Col className="search-box" xs={6} xl={4}>
+          <InputGroup>
+          <InputGroup.Prepend><span style={{display: "flex", alignItems: "center", justifyContent: "center"}}><FontAwesomeIcon icon="search"></FontAwesomeIcon></span></InputGroup.Prepend>
+          
+          <FormControl  placeholder="Search"></FormControl>
+          </InputGroup>
+      </Col>
+      <Col style={{display: "flex", justifyContent: "center"}} xs={6} xl={4}><span style={{fontSize: "1.3em", fontWeight: "400"}}>Member's List</span></Col>
+       
       </div>
-      <ReactScrollBar>
-      <Table striped={true} bordered={true} hover={true} variant="dark">
-        <tbody>
-          <tr>
-            <th>#</th>
-            <th>Member Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Gender</th>
-            <th>Age</th>
-            <th>L.g.a</th>
-            <th>State</th>
-          </tr>
-
-          <tr className="table_row">
-            <td>1</td>
-            <td>422244</td>
-            <td>Jamiu</td>
-            <td>Suleiman</td>
-            <td>Male</td>
-            <td>30</td>
-            <td>Dala</td>
-            <td>Kano</td>
-          </tr>
-          <tr className="table_row">
-            <td>2</td>
-            <td>422244</td>
-            <td>Bolaji</td>
-            <td>Amusan</td>
-            <td>Male</td>
-            <td>30</td>
-            <td>Dala</td>
-            <td>Kano</td>
-          </tr>
-        </tbody>
-      </Table>
+      <ReactScrollBar backgroundColor="transparent" component="div">
+        <div style={{ display: "flex" , marginTop: "2em", padding: "1em"}}>
+          <MembersTable members={members}/>
+        </div>
       </ReactScrollBar>
     </div>
   );
 };
 
-export default MembersList;
+function mapStateToProps(state) {
+  return {
+    members: state.members
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {actions: {
+    loadMembers: bindActionCreators(memberActions.loadMembers, dispatch)
+  }
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(MembersList);
