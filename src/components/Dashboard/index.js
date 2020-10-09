@@ -12,7 +12,7 @@ const Dashboard = () => {
   return (
     <>
       <Row>
-        <div className="info-cards">
+        <div className="info-cards">       
           <Col xs={12} sm={3} md={3} lg={3}>
             <Card>
               <div className="app-cards">
@@ -111,6 +111,18 @@ const Dashboard = () => {
               </Card.Body>
             </Card>
           </div>
+        </Col>
+        <Col lg={3}>
+        <div>
+          <Card>
+            <Card.Header><h4>Recent Users</h4></Card.Header>
+            <div><h6>2ndeh  20min ago</h6></div>
+            <div><h6>2ndeh  20min ago</h6></div>
+            <div><h6>2ndeh  20min ago</h6></div>
+            <div><h6>2ndeh  20min ago</h6></div>
+            <div><h6>2ndeh  20min ago</h6></div>
+          </Card>
+        </div>
         </Col>
         
       </Row>
