@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 import * as userActions from "../../redux/actions/userActions";
 
 const UserList = ({users, actions}) => {
-  const userss=[]
+  
   useEffect(() => {
    actions.loadUsers()
   // eslint-disable-next-line react-hooks/exhaustive-deps
