@@ -18,7 +18,8 @@ import {
   faTrashAlt,
   faSearch,
   faCheckCircle,
-  faCopyright
+  faCopyright,
+  faSignOutAlt
 
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -32,6 +33,7 @@ import GroupList from "./components/GroupList";
 import AddUser from "./components/AddUser/index";
 import UserList from "./components/UserList/index";
 import CreateGroup from "./components/CreateGroup";
+import * as auth from "./middleware/authMIddleware";
 
 library.add(
   faUser,
@@ -48,28 +50,37 @@ library.add(
   faTrashAlt,
   faSearch,
   faCheckCircle,
-  faCopyright
+  faCopyright,
+  faSignOutAlt
 
 );
 function App() {
+  
   return (
     <>
     <Switch>
       <Route path="/home" component={Home}/>
       <Route path="/">
-      <Layout />
-      
-        <div className="route-wrapper">
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/members/new" component={AddMember} />
-          <Route exact path="/members/list" component={MembersList}></Route>
-          <Route exact path="/groups/list" component={GroupList}></Route>
-          <Route exact path="/users/new" component={AddUser}></Route>
-          <Route exact path="/users/list" component={UserList}></Route>
-          <Route exact path="/groups/new" component={CreateGroup}></Route>
-          <Redirect from="/" to="/dashboard"/>
-        </div>
-        </Route>
+      {auth.loggedIn() ?  
+      <>
+          <Layout />
+            <div className="route-wrapper">
+              <Route exact path="/dashboard" component={Dashboard}>
+                </Route>
+              <Route exact path="/members/new" component={AddMember} />
+              <Route exact path="/members/list" component={MembersList}></Route>
+              <Route exact path="/groups/list" component={GroupList}></Route>
+              <Route exact path="/users/new" component={AddUser}></Route>
+              <Route exact path="/users/list" component={UserList}></Route>
+              <Route exact path="/groups/new" component={CreateGroup}></Route>
+              <Redirect from="/" to="/dashboard"/>
+            </div>
+            </>
+            : <Redirect to="/home"/>
+            
+          }  
+     
+      </Route>
         <Route>
           <div>Not Found</div>
         </Route>
