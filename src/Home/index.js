@@ -1,16 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LoginModal from "./Modal/index";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { bindActionCreators } from "redux";
+import {connect} from "react-redux";
+import propTypes from "prop-types";
 
-const Home = (props) => {
+import * as authActions from "../redux/actions/authActions";
+import { Redirect } from "react-router-dom";
+
+const Home = ({auth, actions}) => {
   const [showModal, setshowModal] = useState(false);
   const fontStyle = { marginRight: "8px" };
   const handleClick = () => {
     setshowModal(!showModal);
   };
 
+   useEffect( () => {
+
+    if(auth.isAuthenticated){
+     
+    }
+  }, [auth.isAuthenticated])
+
+
+  function handleLogin(userInfo) {
+    actions.loginUser(userInfo);
+     
+  }
+
   return (
+    
+  <>
+  {auth.isAuthenticated && <Redirect to="/dashboard"/>}
     <div className="main">
       <div className="home__header">
         <span className="home__title">Poldat</span>
@@ -29,7 +51,7 @@ const Home = (props) => {
               of the members...
             </p>
           </div>
-          <LoginModal isShowing={showModal} handleClick={handleClick} />
+          <LoginModal isShowing={showModal} handleLogin={handleLogin} handleClick={handleClick} auth={auth}/>
         </div>
 
         <div className="home__ft">
@@ -80,7 +102,26 @@ const Home = (props) => {
         </div>
       </div>
     </div>
+   </> 
   );
 };
 
-export default Home;
+Home.propTypes = {
+  auth: propTypes.object.isRequired,
+  actions: propTypes.object.isRequired
+}
+
+
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    actions: {loginUser: bindActionCreators(authActions.loginUser, dispatch)
+    }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
