@@ -1,4 +1,3 @@
-import userEvent from "@testing-library/user-event";
 import { handleError, handleResponse } from "./apiUtils";
 
 const keys = require("../config/keys");
