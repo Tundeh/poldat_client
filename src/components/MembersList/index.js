@@ -5,13 +5,12 @@ import {bindActionCreators} from "redux";
 import ReactScrollBar from "react-perfect-scrollbar";
 import propTypes from "prop-types";
 import * as memberActions from "../../redux/actions/memberActions";
-import MemberPagination from "./pagination";
 import MembersTable from "./membersTable";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { Col, FormControl, InputGroup } from "react-bootstrap";
 
-const MembersList = ({actions, members}) => {
-
+const MembersList = ({actions, members, member}) => { 
+  
   useEffect(() => {
 
       actions.loadMembers();
@@ -40,22 +39,30 @@ const MembersList = ({actions, members}) => {
       </div>
       <ReactScrollBar backgroundColor="transparent" component="div">
         <div style={{ display: "flex" , marginTop: "2em", padding: "1em"}}>
-          <MembersTable members={members}/>
+          <MembersTable members={members} member={member} actions={actions}/>
         </div>
       </ReactScrollBar>
     </div>
   );
 };
 
+MembersList.propTypes = {
+  members: propTypes.array.isRequired,
+  member: propTypes.object.isRequired,
+  actions: propTypes.object.isRequired
+}
 function mapStateToProps(state) {
   return {
-    members: state.members
+    members: state.members.members,
+    member: state.members.member,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {actions: {
-    loadMembers: bindActionCreators(memberActions.loadMembers, dispatch)
+    loadMembers: bindActionCreators(memberActions.loadMembers, dispatch),
+    deleteMember: bindActionCreators(memberActions.deleteMember, dispatch),
+    loadMember: bindActionCreators(memberActions.loadMember, dispatch)
   }
   }
 }
