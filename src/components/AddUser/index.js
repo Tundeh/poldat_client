@@ -18,7 +18,7 @@ function AddUser() {
     
     <Formik
    validationSchema={schema}
-   onSubmit={console.log}
+   onSubmit={values => console.log(values)}
       initialValues={{
         first_name: "",
         last_name: "",
