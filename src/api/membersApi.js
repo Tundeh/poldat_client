@@ -9,6 +9,10 @@ export const getMembers = (props) => {
   return fetch(baseUrl).then(handleResponse).catch(handleError);
 };
 
+export const getMember = (member) => {
+  return fetch(baseUrl + member).then(handleResponse).catch(handleError);
+}
+
 export const saveMember = (member) => {
  return fetch(baseUrl, {method: "POST",
  headers: {"content-type": "application/json"},
@@ -17,5 +21,7 @@ export const saveMember = (member) => {
 }
 
 export const deleteMember = (member) => {
-  return fetch(baseUrl + member.id, {method: "DELETE"}).then(handleResponse).catch(handleError);
+  console.log(member);
+  return fetch(baseUrl + member._id, {method: "DELETE"
+}).then(handleResponse).catch(handleError);
 }
