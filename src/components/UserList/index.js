@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {Table, Col, Container} from "react-bootstrap";
+import {Table, Container} from "react-bootstrap";
 import {connect} from "react-redux";
 import { bindActionCreators } from "redux";
 import * as userActions from "../../redux/actions/userActions";
