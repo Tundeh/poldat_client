@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "./components/Layout/index";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { Route, Switch, Redirect} from "react-router-dom";
+import propTypes from "prop-types";
+import * as authActions from "./redux/actions/authActions";
 
 import {
   faUser,
@@ -23,17 +27,18 @@ import {
 
 } from "@fortawesome/free-solid-svg-icons";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Dashboard from "./components/Dashboard/index";
 import AddMember from "./components/AddMember/index";
 import MembersList from "./components/MembersList/index";
 import Home from "../src/Home/index";
-import Footer from "./components/Footer/index";
 import "./App.scss";
 import GroupList from "./components/GroupList";
 import AddUser from "./components/AddUser/index";
 import UserList from "./components/UserList/index";
 import CreateGroup from "./components/CreateGroup";
-import * as auth from "./middleware/authMIddleware";
 
 library.add(
   faUser,
@@ -54,14 +59,21 @@ library.add(
   faSignOutAlt
 
 );
-function App() {
+function App({authent, actions}) {
   
+  useEffect(() => {
+    actions.checkUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
-    <>
+    
+   <>
     <Switch>
       <Route path="/home" component={Home}/>
       <Route path="/">
-      {auth.loggedIn() ?  
+    {
+    authent.isAuthenticated ?  
       <>
           <Layout />
             <div className="route-wrapper">
@@ -74,7 +86,9 @@ function App() {
               <Route exact path="/users/list" component={UserList}></Route>
               <Route exact path="/groups/new" component={CreateGroup}></Route>
               <Redirect from="/" to="/dashboard"/>
+              <ToastContainer  autoClose={3000} hideProgressBar />
             </div>
+
             </>
             : <Redirect to="/home"/>
             
@@ -89,4 +103,23 @@ function App() {
   );
 }
 
-export default App;
+App.propTypes = {
+  authent: propTypes.object.isRequired,
+  actions: propTypes.object.isRequired
+}
+
+function mapStateToProps(state) {
+  return {
+    authent: state.auth
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      checkUser: bindActionCreators(authActions.checkUser, dispatch)
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
