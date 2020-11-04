@@ -27,13 +27,13 @@ categoryAxis.renderer.grid.template.location = 0;
 categoryAxis.renderer.minGridDistance = 30;
 
 categoryAxis.renderer.labels.template.adapter.add("dy", function(dy, target) {
+  // eslint-disable-next-line no-self-compare
   if (target.dataItem && target.dataItem.index & 2 == 2) {
     return dy + 25;
   }
   return dy;
 });
 
-let valueAxis = x.yAxes.push(new am4charts.ValueAxis());
 
 // Create series
 let series = x.series.push(new am4charts.ColumnSeries());
