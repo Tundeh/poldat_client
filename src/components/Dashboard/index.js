@@ -8,11 +8,9 @@ import LineChart from "./Chart/LineChart";
 import "./index.scss";
 
 const Dashboard = () => {
-  console.log("reached here");
   return (
     <>
       <Row>
-        <div className="info-cards">       
           <Col xs={12} sm={3} md={3} lg={3}>
             <Card>
               <div className="app-cards">
@@ -74,7 +72,7 @@ const Dashboard = () => {
               </div>
             </Card>
           </Col>
-        </div>
+    
         <Col xs={12} sm={6} md={6} lg={6}>
           <div className="chart-wrapper">
             <Card>
