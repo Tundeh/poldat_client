@@ -1,17 +1,22 @@
-import { handleResponse, handleError } from "./apiUtils";
+import { handleResponse, handleError, authHeader } from "./apiUtils";
 import keys from "../config/keys";
 const baseUrl = keys.apiURL + "groups/";
 
 
 export const getGroups = () => {
-return fetch(baseUrl).then(handleResponse).catch(handleError)
+return fetch(baseUrl, {
+  method: "GET",
+  headers: {
+    ...authHeader()
+  }
+}).then(handleResponse).catch(handleError)
 }
 
 export const saveGroup = (group) => {
   return fetch(baseUrl,  {
     method: "POST",
     headers: {
-      "content-type": "application/json"
+      ...authHeader()
     }, 
     body: JSON.stringify(group)
   }).then(handleResponse).catch(handleError)
