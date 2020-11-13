@@ -1,0 +1,36 @@
+.footer {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  height: 40px;
+  //background: #f2f2f2;
+  background: blue;
+  text-align: center;
+  bottom: 0;
+  > span {
+    color: #000000;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .footer {
+    margin-left: 264px;
+    width: calc(100% - 264px);
+  }
+}
+/*
+.footer__icons {
+  display: flex;
+  justify-content: center;
+}
+
+.footer_icon {
+  margin: 15rem 5rem;
+}
+
+.footer__link {
+  text-decoration: none;
+  box-shadow: none;
+}
+*/

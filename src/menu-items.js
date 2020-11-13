@@ -93,6 +93,13 @@ module.exports = {
           type: "item",
           icon: "share-alt",
           url: "/share"
+        },
+        {
+          id: "logout",
+          title: "Logout",
+          type: "item",
+          icon: "sign-out-alt",
+          url: "/login"
         }
       ]
     }

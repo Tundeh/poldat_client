@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import windowSize from "react-window-size";
@@ -11,6 +10,7 @@ import Navigation from "./Navigation/index";
 import NavLogo from "./NavLogo/index";
 import OutsideClick from "./Navigation/OutsideClick/index";
 import Aux from "../Auxs/index";
+
 
 const Layout = (props) => {
   let layoutContent;
@@ -41,6 +41,7 @@ const Layout = (props) => {
          <NavLogo />
         <div className={mobileClass}>
           <Navigation />
+          
         </div>
         {
             props.collapse_menu?
@@ -56,6 +57,7 @@ const Layout = (props) => {
       <div className="Nav-bar">
         <NavLogo />
         <Navigation />
+
       </div>
     
   }

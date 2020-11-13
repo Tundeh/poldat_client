@@ -1,0 +1,18 @@
+.form-label {
+  font-size: 1.2em;
+}
+.container {
+  font-family: "Roboto";
+  .form_header {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    min-height: 3em;
+    border-bottom-style: solid;
+    border-bottom-color: turquoise;
+    border-bottom-width: 2px;
+    margin-bottom: 1em;
+    color: #b1aecf;
+  }
+}

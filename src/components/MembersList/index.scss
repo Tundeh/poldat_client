@@ -1,0 +1,45 @@
+.table-wrapper {
+  width: 100%;
+  padding: 1em;
+  color: #b1aecf;
+  font-family: "Roboto";
+  .table-header {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    min-height: 3em;
+    border-bottom-style: solid;
+    border-bottom-color: turquoise;
+    border-bottom-width: 2px;
+
+    .search-box {
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  .table_row {
+    font-family: "Roboto";
+    &:hover {
+      background-color: rgb(114, 141, 161);
+      color: #ffffff;
+    }
+  }
+}
+
+.table__inner {
+  display: flex;
+}
+
+@keyframes box-stretch {
+  0% {
+    width: 60%;
+  }
+  50% {
+    width: 80%;
+  }
+  100% {
+    width: 100%;
+  }
+}
